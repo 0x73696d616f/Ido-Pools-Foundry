@@ -4,6 +4,7 @@ pragma solidity ^0.8.20;
 import "./IDOStructs.sol";
 import "../interface/IIDOPool.sol";
 import "../MultiplierContract.sol";
+import "../interface/IMultiplierContract.sol";
 
 contract IDOStorage {
     address public treasury;

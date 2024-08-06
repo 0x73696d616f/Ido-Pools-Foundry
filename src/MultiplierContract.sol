@@ -1,32 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-interface IStakingContract {
-    /// @notice Retrieves staking details for a given user.
-    /// @param user The address of the user to query.
-    /// @return amountStaked The amount staked by the user.
-    /// @return rewardDebt The debt of the user towards rewards.
-    /// @return rewards The total rewards accumulated by the user.
-    /// @return unstakeInitTime The timestamp when unstaking was initiated.
-    /// @return stakeInitTime The timestamp when staking was initiated.
-    function stakers(address user) external view returns (
-        uint256 amountStaked, 
-        uint256 rewardDebt, 
-        uint256 rewards, 
-        uint256 unstakeInitTime, 
-        uint256 stakeInitTime
-    );
-}
-
-/// @title Interface for the Multiplier Contract
-/// @notice This interface defines the core functionality for retrieving user multipliers and ranks
-interface IMultiplierContract {
-    /// @notice Retrieves the multiplier and rank for a given user
-    /// @param user The address of the user to query
-    /// @return multiplier The multiplier value corresponding to the user's staked amount
-    /// @return rank The rank or level that corresponds to the user's staked amount
-    function getMultiplier(address user) external view returns (uint256 multiplier, uint256 rank);
-}
+import "./interface/IStakingContract.sol";
 
 /// @title Multiplier Contract for managing levels and multipliers based on staked amounts.
 /// @notice This contract allows for timed updates to multiplier and threshold configurations based on user stakings.

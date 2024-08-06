@@ -42,7 +42,7 @@ contract IDOPoolTest is Test {
         // Deploy TestStandardIDOPool contract
         vm.startPrank(deployer);
         ido = new TestStandardIDOPool();
-        ido.init(deployer);
+        ido.init(deployer, deployer);
         vm.stopPrank();
 
         vm.deal(user1, 10 ether);
